@@ -1,12 +1,10 @@
 package com.example.camermarket.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Data
@@ -25,4 +23,6 @@ public class Product {
     private Timestamp overThe;
     private Boolean isActual;
     private Boolean confirmed;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<Attachment> attachments;
 }
