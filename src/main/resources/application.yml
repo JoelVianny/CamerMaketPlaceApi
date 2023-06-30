@@ -1,4 +1,6 @@
-
+jwt:
+  secret: joelVianny
+  lifetime: 30m
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/camer
